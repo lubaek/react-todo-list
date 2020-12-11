@@ -9,7 +9,7 @@ const TodoEdit = (props) => {
 
 	useEffect(() => {
 		axios
-			.get(`https://my-json-server.typicode.com/lubaek/just/todos/${id}`)
+			.get(`http://localhost:3000/todos/${id}`)
 			.then((res) => {
 				setTodo(res.data);
 				setValue(res.data.title);
@@ -18,7 +18,7 @@ const TodoEdit = (props) => {
 
 	const updateTodo = () =>
 		axios
-			.put(`https://my-json-server.typicode.com/lubaek/just/todos/${id}`, {
+			.put(`http://localhost:3000/todos/${id}`, {
 				...todo,
 				title: value,
 			})
@@ -26,7 +26,7 @@ const TodoEdit = (props) => {
 
 	const removeTodo = () =>
 		axios
-			.delete(`https://my-json-server.typicode.com/lubaek/just/todos/${id}`)
+			.delete(`http://localhost:3000/todos/${id}`)
 			.then(() => history.push("/"));
 
 	return (
