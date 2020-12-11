@@ -8,7 +8,7 @@ const Todos = () => {
 
 	useEffect(() => {
 		axios
-			.get("https://my-json-server.typicode.com/lubaek/just/todos")
+			.get("http://localhost:3000/todos/")
 			.then((res) => setTodos(res.data));
 	}, []);
 
@@ -16,7 +16,7 @@ const Todos = () => {
 		if (value.trim().length === 0) return;
 
 		axios
-			.post("https://my-json-server.typicode.com/lubaek/just/todos", {
+			.post("http://localhost:3000/todos/", {
 				title: value,
 				completed: false,
 			})
